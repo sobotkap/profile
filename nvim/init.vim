@@ -123,6 +123,11 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 noremap U <c-r>
 noremap <c-r> <NOP>
 
+" Terminal
+noremap <A-t> :terminal<CR>:set hidden<CR>
+tnoremap <A-p> <C-\><C-n>:bnext<CR>
+tnoremap <A-p> <C-\><C-n>:bprevious<CR>
+tnoremap <A-[> <C-\><C-n>
 
 " ================ Visualization ====================
  
