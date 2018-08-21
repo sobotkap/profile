@@ -45,6 +45,9 @@ call minpac#add('lifepillar/vim-solarized8')
 " glsl color
 call minpac#add('tikhomirov/vim-glsl')
 
+" Rust completion via racer
+call minpac#add('racer-rust/vim-racer')
+
 " ================ Suggestions ======================
  
 " show wild menu (menu of suggestions) when typing commands in command mode
@@ -323,7 +326,7 @@ let g:clang_format#command = 'clang-format'
 "let g:clang_format#style_options = {
 "            \ "BreakBeforeBraces" : "Attach",
 "            \ "UseTab" : "Never",
-"            \ "IndentWidth" : 4,
+"            \ "IndentWidth" : 2,
 "            \ "ColumnLimit" : 100,
 "            \ "AccessModifierOffset" : -4,
 "            \ "AllowShortIfStatementsOnASingleLine" : "false",
@@ -356,6 +359,13 @@ map <leader><leader>k <Plug>(easymotion-j)
 map <leader><leader>l <Plug>(easymotion-k)
 map <leader><leader>č <Plug>(easymotion-lineforward)
 
+" ################ vim-racer ########################
+set hidden
+let g:racer_cmd = "~/.cargo/bin/racer"
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 " TODO: add (cmake) project support
 
