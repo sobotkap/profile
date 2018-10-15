@@ -48,6 +48,9 @@ call minpac#add('tikhomirov/vim-glsl')
 " Rust completion via racer
 call minpac#add('racer-rust/vim-racer')
 
+" Git diff
+call minpac#add('airblade/vim-gitgutter')
+
 " ================ Suggestions ======================
  
 " show wild menu (menu of suggestions) when typing commands in command mode
@@ -96,7 +99,7 @@ endif
  
 " noremap - no recursive mapping
 
-" set the leader key to comma
+" set the leader key to space
 let mapleader = '\<SPACE>'
 
 " clipboard
@@ -257,7 +260,6 @@ let g:airline_symbols.notexists = '∄'
 let g:airline_symbols.whitespace = 'Ξ'
 let g:airline_powerline_fonts = 1
 
-
 " ################ NERDTree #########################
  
 " shift+i (show hidden files)
@@ -381,6 +383,8 @@ augroup filetypes
   autocmd FileType md setlocal wrap textwidth=78
   autocmd FileType markdown setlocal wrap textwidth=78
   autocmd FileType rst setlocal wrap textwidth=78
+  autocmd BufRead,BufNewFile *.adoc setlocal filetype=asciidoc
+  autocmd FileType asciidoc setlocal invspell
 
   " Java
   autocmd FileType javascript setlocal tabstop=4 shiftwidth=4 softtabstop=4
