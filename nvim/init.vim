@@ -100,7 +100,7 @@ endif
 " noremap - no recursive mapping
 
 " set the leader key to space
-let mapleader = '\<SPACE>'
+let mapleader = ' '
 
 " clipboard
 " copy
